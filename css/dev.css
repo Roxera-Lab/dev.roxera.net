@@ -1,0 +1,118 @@
+header {
+  font-size: .7rem;
+  margin-top: .8rem;
+  text-align: right;
+}
+header p {
+  display: inline;
+  margin: 0;
+  padding-right: 1rem;
+}
+footer {
+  color: #31388f;
+  text-align: center;
+}
+a, a:hover, a:visited, a:active {
+  color: #5cf;
+  text-decoration: none;
+}
+body {
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(153,153,153,0.33) 50%,rgba(0,0,0,0.65) 100%);
+  background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(153,153,153,0.33) 50%,rgba(0,0,0,0.65) 100%);
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(153,153,153,0.33) 50%,rgba(0,0,0,0.65) 100%);
+  background: linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(153,153,153,0.33) 50%,rgba(0,0,0,0.65) 100%);
+  background-attachment: fixed;
+  font-family: Georgia, serif;
+}
+.no-js #main p {
+  color: rgba(40,40,130,.8);
+  font-size: 20rem;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 0 36px #aaf;
+}
+
+/*** TRANSFORM SETUP ***/
+#shadowWrapper {
+  perspective: 80px;
+  perspective-origin: 0 0;
+  position: relative;
+  transform: translateX(0); /* Firefox won't redraw without this */
+  white-space: nowrap;
+}
+
+#shadowWrapper p {
+  display: inline;
+}
+#shadowWrapper .shadow {
+  overflow: hidden;
+  transform: rotateX(90deg);
+  transform-origin: 0% 100%;
+  z-index: -1;
+}
+#shadowWrapper .main, #shadowWrapper .shadow {
+  position: absolute;
+}
+.main {
+  display: none;
+  visibility: hidden;
+}
+#shadowWrapper > .main {
+  display: block;
+  visibility: visible;
+}
+
+/*** SHADOW COSMETIC STYLES ***/
+#shadowWrapper {
+  height: 10rem;
+  margin-top: 5em;
+}
+#shadowWrapper .shadow {
+  color: #000;
+  opacity: .2;
+  text-shadow: 0 0 14px #222;
+}
+#shadowWrapper .main {
+  color: rgba(40,40,130,.8);
+  text-shadow: 0 0 36px #aaf;
+}
+#shadowWrapper p {
+  font-size: 10rem;
+  line-height: .7em;
+}
+
+/*** MEDIA QUERIES ***/
+@media (min-width: 480px) {
+  #shadowWrapper {
+    height: 15rem;
+  }
+  #shadowWrapper p {
+    font-size: 15rem;
+  }
+  header {
+    font-size: .9rem;
+  }
+}
+@media (min-width: 800px) {
+  #shadowWrapper {
+    height: 20rem;
+    margin-top: 7rem;
+  }
+  #shadowWrapper p {
+    font-size: 20rem;
+  }
+  header {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  #shadowWrapper {
+    height: 30rem;
+  }
+  #shadowWrapper p {
+    font-size: 30rem;
+  }
+  header {
+    font-size: 1.2rem;
+  }
+}
